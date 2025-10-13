@@ -1,41 +1,73 @@
-# CCC 2025 Junior J5: Connecting Territories
+import sys
 
-def get_cost(row, col, C, M):
-    """Get the cost of tile at (row, col) given the pattern with max cost M"""
-    # Calculate the position in the repeating pattern (reading left to right, row by row)
-    position = row * C + col  # 0-indexed position in the flattened grid
-    return (position % M) + 1
 
-# Read input
-R = int(input())  # Number of rows
-C = int(input())  # Number of columns  
-M = int(input())  # Maximum cost of a tile
+def main() -> None:
+    data = sys.stdin.buffer.read().split()
+    if len(data) < 3:
+        return
 
-# Create the grid with costs
-grid = []
-for r in range(R):
-    row = []
-    for c in range(C):
-        cost = get_cost(r, c, C, M)
-        row.append(cost)
-    grid.append(row)
+    rows = int(data[0])
+    cols = int(data[1])
+    max_cost = int(data[2])
 
-# Dynamic programming approach
-# dp[r][c] = minimum cost to reach tile (r, c)
-dp = [[float('inf')] * C for _ in range(R)]
+    if rows <= 0 or cols <= 0:
+        print(0)
+        return
 
-# Initialize first row
-for c in range(C):
-    dp[0][c] = grid[0][c]
+    pattern = list(range(1, max_cost + 1))
+    prev = [0] * cols
+    new = [0] * cols
 
-# Fill the DP table
-for r in range(1, R):
-    for c in range(C):
-        # Check all possible previous positions (adjacent tiles)
-        for prev_c in range(max(0, c-1), min(C, c+2)):  # c-1, c, c+1
-            if dp[r-1][prev_c] != float('inf'):
-                dp[r][c] = min(dp[r][c], dp[r-1][prev_c] + grid[r][c])
+    # Fill first row directly.
+    idx = 0
+    if max_cost == 1:
+        # Fast path when all tiles cost 1.
+        prev[:] = [1] * cols
+    else:
+        pat = pattern
+        m_local = max_cost
+        for c in range(cols):
+            prev[c] = pat[idx]
+            idx += 1
+            if idx == m_local:
+                idx = 0
 
-# Find the minimum cost in the last row
-min_cost = min(dp[R-1])
-print(min_cost)
+    row_offset = 0
+    last_index = cols - 1
+
+    for _ in range(1, rows):
+        row_offset = (row_offset + cols) % max_cost
+        idx = row_offset
+
+        pat = pattern
+        prev_local = prev
+        new_local = new
+        m_local = max_cost
+
+        i = 0
+        while i < cols:
+            cost = pat[idx]
+            idx += 1
+            if idx == m_local:
+                idx = 0
+
+            best = prev_local[i]
+            if i:
+                left = prev_local[i - 1]
+                if left < best:
+                    best = left
+            if i != last_index:
+                right = prev_local[i + 1]
+                if right < best:
+                    best = right
+
+            new_local[i] = best + cost
+            i += 1
+
+        prev, new = new, prev
+
+    print(min(prev))
+
+
+if __name__ == "__main__":
+    main()

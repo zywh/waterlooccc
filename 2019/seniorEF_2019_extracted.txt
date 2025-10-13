@@ -1,0 +1,1690 @@
+Problem J4/S1: Flipper
+Problem Description
+You are trying to pass the time while at the optometrist. You notice there is a grid of four numbers:
+1
+2
+3
+4
+You see lots of mirrors and lenses at the optometrist, and wonder how ipping the grid horizontally
+or vertically would change the grid.
+Specically, a horizontal ip (across the horizontal centre line) would take the original grid of
+four numbers and result in:
+3
+4
+1
+2
+A vertical ip (across the vertical centre line) would take the original grid of four numbers and
+result in:
+2
+1
+4
+3
+Your task is to determine the nal orientation of the numbers in the grid after a sequence of hori-
+zontal and vertical ips.
+Input Specication
+The input consists of one line, composed of a sequence of at least one and at most 1 000 000
+characters. Each character is either
+H
+, representing a horizontal ip, or
+V
+, representing a vertical
+ip.
+For 8 of the 15 available marks, there will be at most 1 000 characters in the input.
+Output Specication
+Output the nal orientation of the four numbers. Specically, each of the two lines of output will
+contain two integers, separated by one space.
+Sample Input 1
+HV
+Output for Sample Input 1
+4 3
+2 1
+La version franc¸aise gure
+a la suite de la version anglaise.
+Sample Input 2
+VVHH
+Output for Sample Input 2
+1 2
+3 4
+La version franc¸aise gure
+a la suite de la version anglaise.
+Probl
+eme J4/S1: Inverser
+´
+Enonc
+´
+e du probl
+eme
+Vous essayez de passer le temps chez l'optom
+´
+etriste. Vous remarquez une grille de quatre nombres:
+1
+2
+3
+4
+Vous remarquez d'ailleurs plusieurs miroirs et lentilles chez l'optom
+´
+etriste et vous vous demandez
+l'effet qu'aurait une inversion horizontale ou verticale sur la grille.
+Pluspr
+´
+ecis
+´
+ement, uneinversionhorizontale(surlalignehorizontaledumilieu)delagrilleoriginale
+donnerait la grille suivante comme r
+´
+esultat:
+3
+4
+1
+2
+Tandis qu'une inversion verticale (sur la ligne verticale du milieu) de la grille originale donnerait
+la grille suivante comme r
+´
+esultat:
+2
+1
+4
+3
+Votre t
+
+ache consiste
+a d
+´
+eterminer l'orientation nale des nombres dans la grille apr
+es une s
+´
+equence
+d'inversions verticales et horizontales.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees d'entr
+´
+ee
+Les donn
+´
+ees d'entr
+´
+ee ne contiennent qu'une seule ligne. Cette ligne est compos
+´
+ee d'une s
+´
+equence
+de caract
+eres (dont au minimum un seul caract
+ere et au maximum 1 000 000 caract
+eres). Chaque
+caract
+ere est soit un
+H
+(ce qui repr
+´
+esente une inversion horizontale), soit un
+V
+(ce qui repr
+´
+esente
+une inversion verticale).
+Pour 8 des 15 points disponibles, il y aura au plus 1 000 caract
+eres dans les donn
+´
+ees d'entr
+´
+ee.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees de sortie
+Les donn
+´
+ees de sortie devraient afcher l'orientation nale des quatre nombres. Plus pr
+´
+ecis
+´
+ement,
+chacune des deux lignes de sortie contiendra deux entiers qui seront s
+´
+epar
+´
+es par un espace.
+Donn
+´
+ees d'entr
+´
+ee d'un 1
+er
+exemple
+HV
+Donn
+´
+ees de sortie du 1
+er
+exemple
+4 3
+2 1
+English version appears before the French version
+Donn
+´
+ees d'entr
+´
+ee d'un 2
+e
+exemple
+VVHH
+Donn
+´
+ees de sortie du 2
+e
+exemple
+1 2
+3 4
+English version appears before the French version
+Problem S2: Pretty Average Primes
+Problem Description
+For various given positive integers
+N >
+3
+, nd two primes,
+A
+and
+B
+such that
+N
+is the average
+(mean) of
+A
+and
+B
+. That is,
+N
+should be equal to
+(
+A
++
+B
+)
+=
+2
+.
+Recall that a
+prime number
+is an integer
+P >
+1
+which is only divisible by 1 and
+P
+. For example,
+2
+;
+3
+;
+5
+;
+7
+;
+11
+are the rst few primes, and
+4
+;
+6
+;
+8
+;
+9
+are not prime numbers.
+Input Specication
+The rst line of input is the number
+T
+(
+1
+
+T
+
+1000
+), which is the number of test cases. Each of
+the next
+T
+lines contain one integer
+N
+i
+(
+4
+
+N
+i
+
+1 000 000
+,
+1
+
+i
+
+T
+).
+For 6 of the available 15 marks, all
+N
+i
+<
+1 000
+.
+Output Specication
+The output will consist of
+T
+lines. The
+i
+th line of output will contain two integers,
+A
+i
+and
+B
+i
+,
+separated by one space. It should be the case that
+N
+i
+= (
+A
+i
++
+B
+i
+)
+=
+2
+and that
+A
+i
+and
+B
+i
+are prime
+numbers.
+If there are more than one possible
+A
+i
+and
+B
+i
+for a particular
+N
+i
+, output any such pair. The order
+of the pair
+A
+i
+and
+B
+i
+does not matter.
+It will be the case that there will always be at least one set of values
+A
+i
+and
+B
+i
+for any given
+N
+i
+.
+Sample Input
+4
+8
+4
+7
+21
+Possible Output for Sample Input
+3 13
+5 3
+7 7
+13 29
+Explanation of Possible Output for Sample Input
+Notice that:
+8 = (3 + 13)
+=
+2
+;
+4 = (5 + 3)
+=
+2
+;
+7 = (7 + 7)
+=
+2
+;
+Version franc¸aise gure
+a la suite de la version anglaise.
+21 = (13 + 29)
+=
+2
+:
+It is interesting to note, that we can also write
+8 = (5 + 11)
+=
+2
+21 = (5 + 37)
+=
+2 = (11 + 31)
+=
+2 = (19 + 23)
+=
+2
+7 = (3 + 11)
+=
+2
+and so any of these pairs could have also been used in output. There is no pairs of primes other
+than
+3
+and
+5
+which average to the value of
+4
+.
+Footnote
+You may have heard about
+Goldbach's conjecture
+, which states that every even integer greater than
+2 can be expressed as the sum of two prime numbers. There is no known proof, yet, so if you want
+to be famous, prove that conjecture (after you nish the CCC).
+This problem can be used to help verify that conjecture, since every even integer can be written as
+2
+N
+, and your task is to nd two primes
+A
+and
+B
+such that
+2
+N
+=
+A
++
+B
+.
+Version franc¸aise gure
+a la suite de la version anglaise.
+Probl
+eme S2: Des nombres premiers assez moyens
+´
+Enonc
+´
+e du probl
+eme
+´
+Etant donn
+´
+e diff
+´
+erents nombres entiers positifs
+N
+o
+u
+N >
+3
+, d
+´
+eterminer deux nombres premiers,
+A
+et
+B
+, de mani
+ere que
+N
+soit
+´
+egal
+a la moyenne de
+A
+et
+B
+. C'est-
+a-dire que
+N
+doit
+
+etre
+´
+egal
+a
+(
+A
++
+B
+)
+=
+2
+.
+A se rappeler qu'un
+nombre premier
+est un entier
+P >
+1
+qui n'est divisible que par 1 et
+P
+. Par
+exemple, parmi la liste des nombres premiers, les nombres
+2
+;
+3
+;
+5
+;
+7
+;
+11
+en sont les premiers. Les
+nombres
+4
+;
+6
+;
+8
+;
+9
+ne font pas partie de cette liste car ce ne sont pas des nombres premiers.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees d'entr
+´
+ee
+La premi
+ere ligne des donn
+´
+ees d'entr
+´
+ee contient le nombre
+T
+(
+1
+
+T
+
+1000
+) qui repr
+´
+esente
+le nombre de cas de tests. Chacune des
+T
+prochaines lignes contient un entier
+N
+i
+(
+4
+
+N
+i
+
+1 000 000
+,
+1
+
+i
+
+T
+).
+Pour 6 des 15 points disponibles, tout nombre
+N
+i
+doit suivre la condition
+N
+i
+<
+1 000
+.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees de sortie
+Il devrait y avoir
+T
+lignes dans les donn
+´
+ees de sortie. La
+i
+e
+ligne des donn
+´
+ees de sortie devrait
+contenir les deux entiers
+A
+i
+and
+B
+i
+. Ces derniers devraient
+
+etre s
+´
+epar
+´
+es par un espace. De plus,
+comme le pr
+´
+ecise l'
+´
+enonc
+´
+e du probl
+eme,
+A
+i
+et
+B
+i
+doivent
+
+etre des nombres premiers et doivent
+aussi v
+´
+erier l'
+´
+equation
+N
+i
+= (
+A
+i
++
+B
+i
+)
+=
+2
+.
+Il peut exister pour
+N
+i
+plus qu'un seul couple
+A
+i
+et
+B
+i
+. Dans ce cas, les donn
+´
+ees de sortie devraient
+´
+egalement contenir ces autres possibilit
+´
+es. L'ordre dans lequel sont pr
+´
+esent
+´
+es
+A
+i
+et
+B
+i
+n'est pas
+important.
+Il y aura toujours au moins un couple de valeurs
+A
+i
+et
+B
+i
+pour chaque valeur de
+N
+i
+.
+Exemple de donn
+´
+ees d'entr
+´
+ee
+4
+8
+4
+7
+21
+Exemple de donn
+´
+ees de sortie possibles
+3 13
+5 3
+7 7
+13 29
+Justication des donn
+´
+ees de sortie
+English version appears before the French version
+On remarque que:
+8 = (3 + 13)
+=
+2
+;
+4 = (5 + 3)
+=
+2
+;
+7 = (7 + 7)
+=
+2
+;
+21 = (13 + 29)
+=
+2
+:
+D'ailleurs, on aurait pu
+´
+ecrire:
+8 = (5 + 11)
+=
+2
+21 = (5 + 37)
+=
+2 = (11 + 31)
+=
+2 = (19 + 23)
+=
+2
+7 = (3 + 11)
+=
+2
+Donc on aurait pu utiliser n'importe lequel de ces couples dans les donn
+´
+ees de sortie. Il n'y a pas
+de couples de nombres premiers autres que
+3
+et
+5
+qui donneraient une moyenne de
+4
+.
+Note de bas de page
+Vous avez peut-
+
+etre entendu parler de la
+conjecture de Goldbach
+selon laquelle tout entier pair
+sup
+´
+erieur
+a 2 peut
+
+etre exprim
+´
+e par la somme de deux nombres premiers. Cette conjecture n'a
+toujours pas
+´
+et
+´
+e valid
+´
+ee par manque de preuves. Donc, si vous voulez devenir c
+´
+el
+ebre, il n'y aura
+qu'
+a la prouver (une fois que vous aurez termin
+´
+e le CCI).
+Ce probl
+eme peut
+
+etre utilis
+´
+e dans la v
+´
+erication de cette conjecture car chaque entier pair peut
+
+etre
+´
+ecrit de la forme
+2
+N
+, et votre t
+
+ache est de trouver deux nombres premiers
+A
+et
+B
+tels que
+2
+N
+=
+A
++
+B
+.
+English version appears before the French version
+Problem S3: Arithmetic Square
+Problem Description
+You are given a
+3
+
+3
+grid which contains integers.
+Some of the 9 elements in the grid will have a value already, and the remaining elements will be
+unspecied.
+Your task is to determine values for the unspecied elements such that each row, when read from
+left-to-right is an arithmetic sequence, and that each column, when read from the top-down, is an
+arithmetic sequence.
+Recall that an
+arithmetic sequence
+of length three is a sequence of integers of the form
+a;a
++
+d;a
++ 2
+d
+for integer values of
+a
+and
+d
+. Note that
+d
+may be any integer, including zero or a negative integer.
+Input Specication
+The input will be 3 lines long. Each line will have three space-separated values. Each value will
+either be an integer in the range from
+ 
+1 000 000
+to
+1 000 000
+, inclusive, or the symbol
+X
+.
+For 4 of the 15 marks available, there will be at most 3
+X
+symbols in the input.
+For an additional 3 of the 15 marks available, all integer values in the input will be between -10
+and 10, inclusive.
+For an additional 4 of the 15 marks available, there will be at least 7
+X
+symbols in the input.
+For an additional 2 of the 15 marks available, all integer values in the input will be even numbers.
+Output Specication
+The output will be 3 lines long. Each line will have three space-separated integers. All integers
+that were given in the input must be in their same position (i.e., same row and same column as in
+the input). All rows and columns must form arithmetic sequences. All integers in the output must
+be between -1 000 000 000 and 1 000 000 000, inclusive.
+If there is more than one solution, output any solution. There is guaranteed to be at least one
+solution.
+Sample Input 1
+8 9 10
+16 X 20
+24 X 30
+Output for Sample Input 1
+8 9 10
+La version franc¸aise gure
+a la suite de la version anglaise.
+16 18 20
+24 27 30
+Explanation of Output for Sample Input 1
+Notice that the second element of the second row must be
+16 +
+t
+and since
+20 = 16 + 2
+t
+, then
+t
+= 2
+, and thus, this unspecied element must be 18. A similar argument applies to the second
+element of the third row.
+Sample Input 2
+14 X X
+X X 18
+X 16 X
+Possible Output for Sample Input 2
+14 20 26
+18 18 18
+22 16 10
+Explanation of Output for Sample Input 2
+This is one of many possible solutions. For example, another solution is:
+14 16 18
+14 16 18
+14 16 18
+La version franc¸aise gure
+a la suite de la version anglaise.
+Probl
+eme S3: Carr
+´
+e Arithm
+´
+etique
+´
+Enonc
+´
+e du probl
+eme
+Vous recevez une grille
+3
+
+3
+qui contient des entiers.
+Parmi les 9
+´
+el
+´
+ements dans la grille, certains auront d
+´
+ej
+a une valeur tandis que d'autres seront
+ind
+´
+etermin
+´
+es.
+Votre t
+
+ache consiste
+a d
+´
+eterminer les valeurs des
+´
+el
+´
+ements ind
+´
+etermin
+´
+es telles que chaque rang
+´
+ee,
+lue de gauche
+a droite, soit une suite arithm
+´
+etique et que chaque colonne, lue de haut en bas, soit
+elle aussi une suite arithm
+´
+etique.
+A se rappeler qu'une
+suite arithm
+´
+etique
+de longueur trois est une suite d'entiers de la forme
+a;a
++
+d;a
++ 2
+d
+o
+u
+a
+et
+d
+sont des valeurs enti
+eres. Remarquons aussi que
+d
+peut
+
+etre un entier quelconque, y
+compris z
+´
+ero ou un entier n
+´
+egatif.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees d'entr
+´
+ee
+Il devrait y avoir 3 lignes dans les donn
+´
+ees d'entr
+´
+ee. Chaque ligne contiendra trois valeurs dont
+chacune des valeurs sera s
+´
+epar
+´
+ee des autres par un espace. Chaque valeur sera soit un entier de
+ 
+1 000 000
+a
+1 000 000
+, soit le symbole
+X
+.
+Pour 4 des 15 points disponibles, il y aura un maximum de 3 symboles
+X
+dans les donn
+´
+ees d'entr
+´
+ee.
+Pour 3 autres points parmi les 15 points disponibles, les entiers des donn
+´
+ees d'entr
+´
+ee auront tous
+des valeurs de -10
+a 10.
+Pour 4 autres points parmi les 15 points disponibles, il y aura un minimum de 7 symboles
+X
+dans
+les donn
+´
+ees d'entr
+´
+ee.
+Pour 2 autres points parmi les 15 points disponibles, tous les entiers dans les donn
+´
+ees d'entr
+´
+ee
+seront des nombres pairs.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees de sortie
+Il devrait y avoir 3 lignes dans les donn
+´
+ees de sortie. Chaque ligne contiendra trois entiers dont
+chacun des entiers sera s
+´
+epar
+´
+e des autres par un espace. Tous les entiers qui se trouvaient dans
+les donn
+´
+ees d'entr
+´
+ee doivent
+
+etre situ
+´
+es
+a la m
+
+eme position (c.-
+a-d. dans la m
+
+eme rang
+´
+ee et dans
+la m
+
+eme colonne qu'ils ne l'
+´
+etaient dans les donn
+´
+ees d'entr
+´
+ee). Toutes les rang
+´
+ees et toutes les
+colonnes doivent former des suites arithm
+´
+etiques. Les entiers des donn
+´
+ees de sortie auront tous
+des valeurs de -1 000 000 000
+a 1 000 000 000.
+Il y aura toujours au moins une solution. Dans le cas o
+u il existerait plusieurs solutions, fournissez-
+en au moins une.
+Donn
+´
+ees d'entr
+´
+ee d'un 1
+er
+exemple
+English version appears before the French version
+8 9 10
+16 X 20
+24 X 30
+Donn
+´
+ees de sortie du 1
+er
+exemple
+8 9 10
+16 18 20
+24 27 30
+Justication des donn
+´
+ees de sortie du 1
+er
+exemple
+Onremarquequeledeuxi
+eme
+´
+el
+´
+ementdeladeuxi
+emerang
+´
+eedoit
+
+etre
+16+
+t
+. Puisque
+20 = 16+2
+t
+,
+donc
+t
+= 2
+, ainsi cet
+´
+el
+´
+ement ind
+´
+etermin
+´
+e doit
+
+etre 18. On peut utiliser le m
+
+eme argument pour le
+deuxi
+eme
+´
+el
+´
+ement de la troisi
+eme rang
+´
+ee.
+Donn
+´
+ees d'entr
+´
+ee d'un 2
+e
+exemple
+14 X X
+X X 18
+X 16 X
+Donn
+´
+ees de sortie possibles pour le 2
+e
+exemple
+14 20 26
+18 18 18
+22 16 10
+Justication des donn
+´
+ees de sortie du 2
+e
+exemple
+Celle-ci n'est qu'une solution parmi plusieurs. Voici, par exemple, une autre solution:
+14 16 18
+14 16 18
+14 16 18
+English version appears before the French version
+Problem S4: Tourism
+Problem Description
+You are planning a trip to visit
+N
+tourist attractions. The attractions are numbered from
+1
+to
+N
+and
+must be visited in this order. You can visit at most
+K
+attractions per day, and want to plan the trip
+to take the fewest number of days as possible.
+Under these constraints, you want to nd a schedule that has a nice balance between the attractions
+visited each day. To be precise, we assign a score
+a
+i
+to attraction
+i
+. Given a schedule, each day is
+given a score equal to the maximum score of all attractions visited that day. Finally, the scores of
+each day are summed to give the total score of the schedule. What is the maximum possible total
+score of the schedule, using the fewest days possible?
+Input Specication
+The rst line contains two space-separated integers
+N
+and
+K
+(
+1
+
+K
+
+N
+
+10
+6
+).
+The next line contains
+N
+space separated integers
+a
+i
+(
+1
+
+a
+i
+
+10
+9
+).
+For 3 of the 15 available marks,
+2
+K
+
+N
+.
+For an additional 3 of the 15 available marks,
+K
+
+100
+and
+N
+
+10
+5
+.
+Output Specication
+Output a single integer, the maximum possible total score.
+Sample Input
+5 3
+2 5 7 1 4
+Output for Sample Input
+12
+Explanation of Output for Sample Input
+We need to have at least two days to visit all the attractions, since we cannot visit all attractions in
+one day.
+Visiting the rst two attractions on day 1 will give a score of 5, and visiting the last three attractions
+on day 2 will give a score of 7, for a total score of 12.
+Visiting three attractions on day 1, and two attractions on day 2, which is the only possibility to
+visit in the fewest number of days possible, would yield a total score of
+7 + 4 = 11
+.
+La version franc¸aise gure
+a la suite de la version anglaise.
+Probl
+eme S4: Le tourisme
+´
+Enonc
+´
+e du probl
+eme
+Vous planiez un voyage an de visiter
+N
+attractions touristiques. Les attractions touristiques sont
+num
+´
+erot
+´
+ees de
+1
+a
+N
+et doivent
+
+etre visit
+´
+ees dans cet ordre. Vous pouvez visiter un maximum de
+K
+attractions par jour. Vous essayez d'ailleurs de planier votre voyage de mani
+ere qu'il soit aussi
+court que possible (c.-
+a.d. le moins de jours possible).
+De plus, vous souhaitez
+´
+etablir un horaire plus ou moins
+´
+equilibr
+´
+e quant au nombre d'attractions
+que vous visitez par jour. Par souci de pr
+´
+ecision, on attribue un score de
+a
+i
+a l'attraction
+i
+. Le score
+d'une journ
+´
+ee correspond au score le plus
+´
+elev
+´
+e parmi tous les scores des attractions qui ont
+´
+et
+´
+e
+visit
+´
+ees ce jour-l
+a. Enn, on additionne les scores de toutes les journ
+´
+ees du voyage an d'obtenir
+le score total de l'horaire. En voyageant le moins de jours possible, quel est le score total maximal
+possible de l'horaire?
+Pr
+´
+ecisions par rapport aux donn
+´
+ees d'entr
+´
+ee
+La premi
+ere ligne contiendra deux valeurs, soit
+N
+et
+K
+(
+1
+
+K
+
+N
+
+10
+6
+), dont chacune sera
+s
+´
+epar
+´
+ee de l'autre par un espace.
+La prochaine ligne contiendra
+N
+entiers
+a
+i
+(
+1
+
+a
+i
+
+10
+9
+) dont chacune sera s
+´
+epar
+´
+ee des autres
+par un espace.
+Pour 3 des 15 points disponibles,
+2
+K
+
+N
+.
+Pour 3 autres points parmi les 15 points disponibles,
+K
+
+100
+et
+N
+
+10
+5
+.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees de sortie
+Les donn
+´
+ees de sortie ne devraient contenir qu'un seul entier, soit le score total maximal possible.
+Exemple de donn
+´
+ees d'entr
+´
+ee
+5 3
+2 5 7 1 4
+Exemple de donn
+´
+ees de sortie
+12
+Justication des donn
+´
+ees de sortie
+Il nous faudra au moins deux jours de voyage an de visiter les attractions car on ne peut pas toutes
+les visiter en une seule journ
+´
+ee.
+En visitant les deux premi
+eres attractions lors du premier jour, on obtient un score de 5 pour cette
+journ
+´
+ee. En visitant les trois derni
+eres attractions lors du deuxi
+eme jour, on obtient un score de 7
+pour cette deuxi
+eme journ
+´
+ee. Donc, le score total est
+´
+egal
+a 12.
+En consid
+´
+erant les autres possiblit
+´
+es, il faut garder en t
+
+ete que le voyage doit
+
+etre aussi court que
+English version appears before the French version
+possible. On aurait donc pu visiter trois attractions lors du premier jour et deux attractions lors du
+deuxi
+eme jour an d'obtenir un score total de
+7 + 4 = 11
+.
+English version appears before the French version
+Problem S5: Triangle: The Data Structure
+Problem Description
+In a parallel universe, the most important data structure in computer science is the
+triangle
+. A
+triangle of size
+M
+consists of
+M
+rows, with the
+i
+-th row containing
+i
+elements. Furthermore, these
+rows must be arranged to form the shape of an equilateral triangular. That is, each row is centered
+around a vertical line of symmetry through the middle of the triangle. For example, the diagram
+below shows a triangle of size 4:
+3
+1
+2
+4
+2
+1
+6
+1
+4
+2
+A triangle contains sub-triangles. For example, the triangle above contains ten sub-triangles of
+size 1, six sub-triangles of size 2 (two of which are the triangle containing
+(3
+;
+1
+;
+2)
+and the triangle
+containing
+(4
+;
+6
+;
+1)
+), three sub-triangles of size 3 (one of which contains
+(2
+;
+2
+;
+1
+;
+1
+;
+4
+;
+2)
+). Note
+that every triangle is a sub-triangle of itself.
+You are given a triangle of size
+N
+and must nd the sum of the maximum elements of every
+sub-triangle of size
+K
+.
+Input Specication
+The rst line contains two space-separated integers
+N
+and
+K
+(
+1
+
+K
+
+N
+
+3000
+).
+Following this are
+N
+lines describing the triangle. The
+i
+-th of these lines contains
+i
+space-separated
+integers
+a
+i;j
+(
+0
+
+a
+i;j
+
+10
+9
+), representing the
+i
+-th row of the triangle.
+For 4 of the 15 available marks,
+N
+
+1000
+.
+Output Specication
+Output the integer sum of the maximum elements of every sub-triangle of size
+K
+.
+Sample Input
+4 2
+3
+1 2
+4 2 1
+6 1 4 2
+Output for Sample Input
+23
+La version franc¸aise gure
+a la suite de la version anglaise.
+Probl
+eme S5: Le triangle en tant que structure de donn
+´
+ees
+´
+Enonc
+´
+e du probl
+eme
+Dansunmondeparall
+ele, lastructurededonn
+´
+eeslaplusimportantedansledomainedel'informatique
+est le
+triangle
+. Un triangle de taille
+M
+comprend
+M
+rang
+´
+ees dont la
+i
+e
+rang
+´
+ee contient
+i
+´
+el
+´
+ements.
+De plus, on doit arranger ces rang
+´
+ees de mani
+ere qu'elles aient la forme d'un triangle
+´
+equilat
+´
+eral.
+C'est-
+a-dire que chaque rang
+´
+ee a son centre sur la ligne de sym
+´
+etrie verticale du triangle. Par
+exemple, on voit dans la gure ci-dessous un triangle de taille 4:
+3
+1
+2
+4
+2
+1
+6
+1
+4
+2
+Un triangle contient aussi des sous-triangles. Par exemple, le triangle ci-dessus contient dix sous-
+triangles de taille 1, six sous-triangles de taille 2 (dont deux sont les triangles qui contiennent
+(3
+;
+1
+;
+2)
+et
+(4
+;
+6
+;
+1)
+), trois sous-triangles de taille 3 (dont le triangle qui contient
+(2
+;
+2
+;
+1
+;
+1
+;
+4
+;
+2)
+).
+On remarque aussi que chaque triangle est son propre sous-triangle.
+´
+Etant donn
+´
+e un triangle de taille
+N
+, d
+´
+eterminer la somme des
+´
+el
+´
+ement maximal de chaque sous-
+triangle de taille
+K
+.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees d'entr
+´
+ee
+La premi
+ere ligne contiendra deux entiers, soit
+N
+et
+K
+(
+1
+
+K
+
+N
+
+3000
+), qui seront s
+´
+epar
+´
+es
+l'un de l'autre par un espace.
+Les
+N
+lignes suivantes d
+´
+ecriront le triangle. Parmi ces lignes, la
+i
+e
+ligne contiendra
+i
+entiers
+a
+i;j
+(
+0
+
+a
+i;j
+
+10
+9
+) qui seront s
+´
+epar
+´
+es les uns des autres par un espace. Ces derniers repr
+´
+esenteront la
+i
+e
+rang
+´
+ee du triangle.
+Pour 4 des 15 points disponibles,
+N
+
+1000
+.
+Pr
+´
+ecisions par rapport aux donn
+´
+ees de sortie
+Il devrait y avoir la somme des
+´
+el
+´
+ement maximal de chaque sous-triangle de taille
+K
+.
+Exemple de donn
+´
+ees d'entr
+´
+ee
+4 2
+3
+1 2
+4 2 1
+6 1 4 2
+Exemple de donn
+´
+ees de sortie
+23
+English version appears before the French version
